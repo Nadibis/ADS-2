@@ -4,14 +4,15 @@
 
 
 double pown(double value, uint16_t n) {
-  double pown2 = pown(value, n / 2);
-  if (n == 0) return 1.0;
-  if (n % 2 == 0) {
-      return pown2 * pown2;
-  } else {
-    return value * pown2 * pown2;
-  }
-  return 0.0;
+    if (n == 0) {
+      return 1.0;
+    }
+    double pown2 = pown(value, n / 2);
+    if (n % 2 == 0) {
+        return pown2 * pown2;
+    } else {
+        return value * pown2 * pown2;
+    }
 }
 
 uint64_t fact(uint16_t n) {
